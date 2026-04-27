@@ -26,8 +26,8 @@
     {{-- 1. Active Filters --}}
     @php
         $activeFilters = [];
-        foreach((array) request('category', []) as $cid) {
-            $cat = $categories->firstWhere('id', $cid);
+        foreach((array) request('category', []) as $clg) {
+            $cat = $categories->firstWhere('slug', $clg);
             if ($cat) $activeFilters[] = ['label' => $cat->name];
         }
         foreach((array) request('origin', []) as $o) { $activeFilters[] = ['label' => $o]; }
@@ -64,8 +64,8 @@
                 @foreach($categories as $category)
                     <li>
                         <label class="filter-item">
-                            <input type="checkbox" name="category[]" value="{{ $category->id }}" class="filter-checkbox"
-                                {{ in_array($category->id, (array) request('category', [])) ? 'checked' : '' }}
+                            <input type="checkbox" name="category[]" value="{{ $category->slug }}" class="filter-checkbox"
+                                {{ in_array($category->slug, (array) request('category', [])) ? 'checked' : '' }}
                                 onchange="this.form.submit()">
                             <span>{{ $category->name }}</span>
                         </label>

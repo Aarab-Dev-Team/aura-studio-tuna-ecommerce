@@ -902,11 +902,11 @@
                 <a href="{{ route('shop.catalog') }}" class="{{ request()->routeIs('shop.catalog') ? 'active' : '' }}">Shop</a>
                 <a href="{{ route('about') }}">About</a>
             </nav>
-
-            <div class="search-bar">
-                <i class="iconoir-search"></i>
-                <input type="text" placeholder="Search catalog...">
-            </div>
+            
+            <form method="GET" action="{{ route("shop.catalog") }}" class="search-bar">
+                    <i class="iconoir-search"></i>
+                    <input name="search" type="text" placeholder="Search catalog...">
+            </form>
 
             <div class="header-actions">
                 @auth

@@ -28,8 +28,15 @@ class CatalogController extends Controller
         $products = Product::query()
             ->with('category')
             ->where('is_active', true)
+            ->when($request->filled('search') , function($query)  use ($request){
+                    $query->where('name' , "like"  , "%" . $request->search . "%") ; 
+            })
             ->when($request->filled('category'), function ($query) use ($request) {
-                $query->whereIn('category_id', (array) $request->category);
+                $query->whereHas('category',function($q) use ($request){
+
+                    $q->whereIn('slug' , (array) $request->category) ; 
+
+                });
             })
             ->when($request->filled('origin'), function ($query) use ($request) {
                 $query->whereIn('origin', (array) $request->origin);
