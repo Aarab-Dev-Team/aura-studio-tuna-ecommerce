@@ -60,7 +60,7 @@ class CatalogController extends Controller
             }, function ($query) {
                 $query->latest();
             })
-            ->paginate(9)
+            ->paginate(20)
             ->withQueryString();
 
         return view('shop.catalog', compact(

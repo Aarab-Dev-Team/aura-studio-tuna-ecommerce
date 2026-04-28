@@ -326,7 +326,18 @@
 
            
 .sidebar { 
-    padding-right: 40px; 
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+
+
+}
+
+.sidebar-filters{
+    max-height: calc(100vh - 120px); 
+    overflow-y: auto;
+    width: 100% ; 
+        padding-right: 45px;
 }
 
 /* Active Filters Section */

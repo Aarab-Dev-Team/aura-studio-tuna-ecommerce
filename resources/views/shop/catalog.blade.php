@@ -49,6 +49,8 @@
     </div>
     @endif
 
+    <div class="sidebar-filters">
+
     {{-- 2. Category Filter --}}
     <div class="filter-group">
         <div class="filter-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
@@ -128,6 +130,7 @@
         </div>
     </div>
 
+    </div>
 </aside>
     </form>
 
