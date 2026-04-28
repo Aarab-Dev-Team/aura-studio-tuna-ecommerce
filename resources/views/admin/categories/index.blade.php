@@ -14,17 +14,6 @@
         <button class="btn btn-primary" onclick="openModal('categoryModal')">+ Add category</button>
     </div>
 
-    {{-- Flash Messages --}}
-    @if(session('success'))
-        <div style="background: var(--accent-sage); color: white; padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 24px;">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if(session('error'))
-        <div style="background: var(--accent-terracotta); color: white; padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 24px;">
-            {{ session('error') }}
-        </div>
-    @endif
 
     <div class="table-wrapper">
         <table>

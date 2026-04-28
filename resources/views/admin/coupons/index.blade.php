@@ -136,7 +136,7 @@
 {{-- Edit Modal --}}
 <div id="edit-modal" class="modal-overlay" onclick="if(event.target === this) closeModal('edit-modal')">
     <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('edit-modal')"><i class="iconoir-cancel"></i></button>
+        <button class="modal-close" onclick="closeModal('edit-modal')"><i class="iconoir-xmark-square modal-close"  style="font-size: 30px;"></i></button>
         <h2>Edit Coupon: <span id="edit-code-display"></span></h2>
         <form id="edit-form" method="POST">
             @csrf @method('PATCH')

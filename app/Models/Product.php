@@ -11,11 +11,13 @@ use App\Models\CartItem ;
 use App\Models\Category ; 
 use App\Models\Review ; 
 use App\Models\Wishlist ; 
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     
     use HasFactory;
+    use SoftDeletes ;
 
       protected $fillable = [
         'name',
