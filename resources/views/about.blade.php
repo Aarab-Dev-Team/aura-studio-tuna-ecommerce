@@ -87,7 +87,7 @@
             
             <div class="team-grid">
                <div class="team-card">
-                    <img src="/assets/aarab-abderrahmane.png" alt="Aarab Abderrahmane" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <img src="/assets/aarab-abderrahmane.png" alt="Aarab Abderrahmane">
                     <h4>AARAB ABDERRAHMANE</h4>
                     <span class="role">Project Architect & System Designer</span>
                     <p>Defined the project foundation, organized task distribution, designed the database structure, and established the overall design system.</p>
@@ -98,7 +98,7 @@
                 </div>
 
                  <div class="team-card">
-                    <img src="/assets/oussama.png" alt="Oussama" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <img src="/assets/oussama.png" alt="Oussama">
                     <h4>OUSSAMA SAIDI</h4>
                     <span class="role">Quality Assurance & Debugging</span>
                     <p>Tested system functionality, identified issues, and ensured stability by fixing bugs and validating features.</p>
@@ -109,7 +109,7 @@
                 </div>
 
                  <div class="team-card">
-                    <img src="/assets/mouad.jpeg" alt="Mouad" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <img src="/assets/mouad.jpeg" alt="Mouad">
                     <h4>MOUAD MEKRECH</h4>
                     <span class="role">System Analyst & UML Designer</span>
                     <p>Created system diagrams including UML, use case, class, and activity diagrams to model the application structure and workflows.</p>
@@ -120,7 +120,7 @@
                 </div>
 
                  <div class="team-card">
-                    <img src="/assets/hajar.png" alt="Hajar" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <img src="/assets/hajar.png" alt="Hajar">
                      <h4>HAJAR BOUYDNAINE</h4>
                     <span class="role">Presentation & Communication</span>
                     <p>Prepared and delivered the project presentation, ensuring clear communication of concepts, features, and system design.</p>
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="team-card">
-                    <img src="/assets/zeinb.png" alt="Zeinb" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <img src="/assets/zeinb.png" alt="Zeinb">
                     <h4>ZAINEB TALEB SAID</h4>
                     <span class="role">Documentation & Internship Report</span>
                     <p>Responsible for writing and organizing the internship report, documenting the project development process and outcomes.</p>
