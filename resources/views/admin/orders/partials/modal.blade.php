@@ -1,6 +1,8 @@
 <div class="modal-overlay" id="orderModal">
     <div class="modal-content" style="max-width: 800px; border-radius: var(--radius-lg); padding: 64px;">
-        <button class="modal-close" onclick="closeModal('orderModal')" style="top: 40px; right: 40px;"> <i class="iconoir-xmark-square modal-close"  style="font-size: 32px;"></i></button>
+        <button class="modal-close" onclick="closeModal('orderModal')" style="top: 40px; right: 40px;">
+            <i class="iconoir-xmark" style="font-size: 24px;"></i>
+        </button>
 
         <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
             <h2 style="margin: 0; font-size: 32px;" id="modal-order-number">#ORD-1234</h2>

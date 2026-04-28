@@ -1,6 +1,8 @@
 <div class="modal-overlay" id="productModal">
     <div class="modal-content">
-        <i class="iconoir-xmark-square modal-close" onclick="closeModal('productModal')" style="font-size: 28px;"></i>
+        <button class="modal-close" onclick="closeModal('productModal')">
+            <i class="iconoir-xmark" style="font-size: 24px;"></i>
+        </button>
         <h2>Add new product</h2>
         <p style="margin-bottom: 32px;">
             @if(auth()->user()->role === 'admin')

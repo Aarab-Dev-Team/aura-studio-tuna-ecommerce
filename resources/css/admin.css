@@ -596,8 +596,16 @@ input:focus, select:focus, textarea:focus {
     color: var(--text-secondary);
     cursor: pointer;
     transition: var(--transition-smooth);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
 }
-.modal-close:hover { color: var(--text-primary); }
+.modal-close:hover { 
+    color: var(--text-primary); 
+    background: var(--bg-secondary);
+}
 
 .form-group { margin-bottom: 24px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }

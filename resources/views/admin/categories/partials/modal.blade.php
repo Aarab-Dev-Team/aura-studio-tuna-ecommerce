@@ -1,10 +1,12 @@
 <div class="modal-overlay" id="categoryModal">
     <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('categoryModal')"><i class="iconoir-xmark-square modal-close"  style="font-size: 30px;"></i></button>
+        <button class="modal-close" onclick="closeModal('categoryModal')">
+            <i class="iconoir-xmark" style="font-size: 24px;"></i>
+        </button>
         <h2>Add category</h2>
         <p style="margin-bottom: 32px;">Create or edit a taxonomy group.</p>
 
-        <form id="categoryForm" method="POST" onsubmit="event.preventDefault(); submitCategoryForm(this);">
+        <form id="categoryForm" action="{{ route('admin.categories.store') }}" method="POST" onsubmit="event.preventDefault(); submitCategoryForm(this);">
             @csrf
             <input type="hidden" name="_method" value="POST">
 
@@ -33,7 +35,7 @@
         const method = form.querySelector('input[name="_method"]').value;
 
         fetch(action, {
-            method: method,
+            method: 'POST',
             body: formData,
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,

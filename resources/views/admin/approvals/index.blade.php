@@ -153,7 +153,9 @@
     <div class="modal-content" style="max-width: 800px;">
         <div class="modal-header">
             <h2 class="modal-title" id="modalProductTitle">Review changes</h2>
-            <button class="modal-close" onclick="closeModal('changesModal')"><i class="iconoir-cancel"></i></button>
+            <button class="modal-close" onclick="closeModal('changesModal')">
+                <i class="iconoir-xmark" style="font-size: 24px;"></i>
+            </button>
         </div>
 
         <div class="diff-grid" id="diffContent">

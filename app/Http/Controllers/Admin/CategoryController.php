@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Category ; 
+use App\Models\Category;
+use Illuminate\Support\Str; 
 
 class CategoryController extends Controller
 {
@@ -19,14 +20,14 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'slug' => 'nullable|string|unique:categories,slug',
+            'description' => 'nullable|string',
         ]);
 
-        Category::create([
+        $category = Category::create([
             'name' => $validated['name'],
             'slug' => $validated['slug'] ?? Str::slug($validated['name']),
+            'description' => $validated['description'] ?? null,
         ]);
-
-
 
         if ($request->expectsJson()) {
             return response()->json(['success' => true, 'category' => $category]);
@@ -40,11 +41,13 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'slug' => 'nullable|string|unique:categories,slug,' . $category->id,
+            'description' => 'nullable|string',
         ]);
 
         $category->update([
             'name' => $validated['name'],
             'slug' => $validated['slug'] ?? Str::slug($validated['name']),
+            'description' => $validated['description'] ?? null,
         ]);
 
         if ($request->expectsJson()) {
