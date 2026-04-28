@@ -139,12 +139,12 @@
 @push('scripts')
 <script>
     async function openOrderModal(orderNum) {
-        console.log(orderNum)
         try {
             const response = await fetch(`/admin/orders/${orderNum}`, {
                 headers: { 'Accept': 'application/json' }
             });
             const order = await response.json();
+
             populateOrderModal(order);
             openModal('orderModal');
         } catch (error) {
@@ -194,12 +194,12 @@
         document.getElementById('modal-payment-method').innerText = paymentMethod;
 
         const form = document.getElementById('status-update-form');
-        form.action = `/admin/orders/${order.id}`;
+        form.action = `/admin/orders/${order.order_number}`;
         document.getElementById('status-select').value = order.status;
 
         // Set delete form action (admin only)
         const deleteForm = document.getElementById('modal-delete-form');
-        if (deleteForm) deleteForm.action = `/admin/orders/${order.id}`;
+        if (deleteForm) deleteForm.action = `/admin/orders/${order.order_number}`;
     }
 
     document.getElementById('status-update-form').addEventListener('submit', async (e) => {

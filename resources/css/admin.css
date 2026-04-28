@@ -588,8 +588,8 @@ input:focus, select:focus, textarea:focus {
 
 .modal-close {
     position: absolute;
-    top: 32px;
-    right: 32px;
+    top: 16px;
+    right: 16px;
     background: none;
     border: none;
     font-size: 24px;

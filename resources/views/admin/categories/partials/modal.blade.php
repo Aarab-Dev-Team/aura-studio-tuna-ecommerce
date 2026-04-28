@@ -1,6 +1,6 @@
 <div class="modal-overlay" id="categoryModal">
     <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('categoryModal')"><i class="iconoir-xmark"></i></button>
+        <button class="modal-close" onclick="closeModal('categoryModal')"><i class="iconoir-xmark-square modal-close"  style="font-size: 30px;"></i></button>
         <h2>Add category</h2>
         <p style="margin-bottom: 32px;">Create or edit a taxonomy group.</p>
 

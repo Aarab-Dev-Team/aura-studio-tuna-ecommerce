@@ -82,7 +82,7 @@
 {{-- Create Modal --}}
 <div id="create-modal" class="modal-overlay" onclick="if(event.target === this) closeModal('create-modal')">
     <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('create-modal')"><i class="iconoir-cancel"></i></button>
+        <button class="modal-close" onclick="closeModal('create-modal')"><i class="iconoir-xmark-square modal-close"  style="font-size: 30px;"></i></button>
         <h2>Create Coupon</h2>
         <form action="{{ route('admin.coupons.store') }}" method="POST">
             @csrf
