@@ -92,30 +92,30 @@
                     <span class="role">Project Architect & System Designer</span>
                     <p>Defined the project foundation, organized task distribution, designed the database structure, and established the overall design system.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="iconoir-github"></i></a>
-                        <a href="#"><i class="iconoir-linkedin"></i></a>
+                        <a href="https://github.com/aarab-abderrahmane" target="_blank"><i class="iconoir-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aarab-abderrahmane-2b9509336/" target="_blank"><i class="iconoir-linkedin"></i></a>
                     </div>
                 </div>
 
                  <div class="team-card">
                     <img src="/assets/d.png" alt="Oussama" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
-                    <h4>Oussama</h4>
+                    <h4>Oussama Saidi</h4>
                     <span class="role">Quality Assurance & Debugging</span>
                     <p>Tested system functionality, identified issues, and ensured stability by fixing bugs and validating features.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="iconoir-github"></i></a>
+                        <a href="https://github.com/CodeByOS" target="_blank"><i class="iconoir-github"></i></a>
                         <a href="#"><i class="iconoir-linkedin"></i></a>
                     </div>
                 </div>
 
                  <div class="team-card">
                     <img src="/assets/mouad.png" alt="Mouad" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
-                    <h4>Mouad</h4>
+                    <h4>Mouad Mekrech</h4>
                     <span class="role">System Analyst & UML Designer</span>
                     <p>Created system diagrams including UML, use case, class, and activity diagrams to model the application structure and workflows.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="iconoir-github"></i></a>
-                        <a href="#"><i class="iconoir-linkedin"></i></a>
+                        <a href="https://github.com/MouadDev12" target="_blank"><i class="iconoir-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mouad-mekrech-5b1057330/" target="_blank"><i class="iconoir-linkedin"></i></a>
                     </div>
                 </div>
 
@@ -130,16 +130,7 @@
                     </div>
                 </div>
 
-                <div class="team-card">
-                    <img src="/assets/member-5.png" alt="Zeinb" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
-                    <h4>Zeinb</h4>
-                    <span class="role">Documentation & Internship Report</span>
-                    <p>Responsible for writing and organizing the internship report, documenting the project development process and outcomes.</p>
-                    <div class="team-socials">
-                        <a href="#"><i class="iconoir-github"></i></a>
-                        <a href="#"><i class="iconoir-linkedin"></i></a>
-                    </div>
-                </div>
+   
             </div>
         </div>
     </section>

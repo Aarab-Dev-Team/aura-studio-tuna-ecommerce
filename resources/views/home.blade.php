@@ -57,11 +57,6 @@
             </svg>
         </div>
 
-        {{-- Scroll hint --}}
-        {{-- <div class="hero-scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div> --}}
     </section>
 
     {{-- ========== MARQUEE STRIP ========== --}}
@@ -130,7 +125,7 @@
             @foreach($categories as $cat)
                 <a href="{{ route('shop.catalog', ['category' => $cat['slug']]) }}" class="category-card">
                     <div class="category-image" style="background-color: {{ $cat['bg_color'] }};">
-                        <div class="category-image-noise"></div>
+                        <div class="category-image-pattern"></div>
                         <div class="category-icon-wrapper">
                             {!! $cat['icon'] !!}
                         </div>
