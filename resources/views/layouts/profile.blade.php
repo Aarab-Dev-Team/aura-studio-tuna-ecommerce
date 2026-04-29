@@ -437,12 +437,14 @@
 
              {{-- Alert Container --}}
             @if(session('alert'))
-                <div class="container" style="margin-top: 20px;">
+                <div class="container" >
                     <x-alert :type="session('alert')['type']" 
                             :message="session('alert')['message']" 
                             :icon="session('alert')['icon'] ?? null" />
                 </div>
             @endif
+
+ 
             
         </header>
 
