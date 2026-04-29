@@ -119,19 +119,18 @@
     color: var(--text-main);
 }
 
-.category-image-noise {
+.category-image-pattern {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
-    /* ← يمكنك زيادتها إلى 0.3 لوضوح أكثر */
+    opacity: 1;
     pointer-events: none;
-    background-image:
-        repeating-radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 8px),
-        repeating-radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 6px);
-    mix-blend-mode: multiply;
+background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='0' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(21.35) translate(-953.16 -714.87)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
 }
 
 .category-icon-wrapper {
@@ -145,16 +144,12 @@
 }
 
 .category-icon-wrapper svg {
-    width: min(72%, 320px);
-    height: min(72%, 320px);
-    /* transform: scale(1);         */
-    transform-origin: center;
-    transition: transform var(--transition-speed);
+    width: min(72%, 180px);
+    height: min(72%, 180px);
+
 }
 
-/* .category-card:hover .category-icon-wrapper svg {
-    transform: scale(1.5);
-} */
+
 
 .category-title {
     margin: 0;
@@ -164,6 +159,25 @@
     text-align: center;
     line-height: 1.35;
 }
+
+.categories-section {
+    padding: 100px var(--gutter);
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+
+
+.category-card:hover {
+    transform: translateY(-6px);
+}
+
+.category-card:hover .category-image-pattern{
+    transform: scale(2);
+}
+
+
+
 
 /* ==========================================================================
    NEW ARRIVALS SECTION
@@ -936,113 +950,11 @@
     transition-delay: 0.4s;
 }
 
-/* =============================================
-           CATEGORIES SECTION — upgraded
-           ============================================= */
-.categories-section {
-    padding: 100px var(--gutter);
-    max-width: var(--container-width);
-    margin: 0 auto;
-}
 
-.section-label {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.section-label::after {
-    content: '';
-    flex: 1;
-    max-width: 40px;
-    height: 1px;
-    background: var(--border-color);
-}
 
-.section-heading {
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    color: var(--text-main);
-    margin-bottom: 48px;
-    max-width: 400px;
-}
 
-.category-card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    border-radius: 4px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-.category-card:hover {
-    transform: translateY(-6px);
-}
-
-.category-card-inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
-    transition: background 0.4s ease;
-}
-
-.category-card:hover .category-card-inner {
-    filter: brightness(0.97);
-}
-
-.category-icon-wrap {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    transition: transform 0.4s ease;
-}
-
-.category-card:hover .category-icon-wrap {
-    transform: scale(1.08) translateY(-4px);
-}
-
-.category-icon-wrap svg {
-    width: 100%;
-    height: auto;
-}
-
-.category-name {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    color: var(--text-main);
-    margin-bottom: 4px;
-}
-
-.category-link-hint {
-    font-size: 12px;
-    color: var(--text-secondary);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: all 0.3s ease;
-}
-
-.category-card:hover .category-link-hint {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* =============================================
            MARQUEE STRIP
