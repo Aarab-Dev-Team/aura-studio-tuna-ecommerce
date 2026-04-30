@@ -1,6 +1,6 @@
 # E-commerce Platform
 
-![Uploading Bold Modern Business Marketing facebook Cover .png…]()
+<img width="851" height="315" alt="Bold Modern Business Marketing facebook Cover " src="https://github.com/user-attachments/assets/a649f6e9-666a-4c9c-a91d-e5cecfad98d7" />
 
 A professional, full-featured e-commerce solution built with **Laravel 13**, **Blade**, **Vanilla CSS**, and **Alpine.js**. This platform provides a seamless shopping experience for customers and a robust management system for administrators and employees.
 
