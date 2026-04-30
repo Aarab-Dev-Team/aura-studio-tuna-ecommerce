@@ -4,7 +4,7 @@
         <h2>Add category</h2>
         <p style="margin-bottom: 32px;">Create or edit a taxonomy group.</p>
 
-        <form id="categoryForm" method="POST" onsubmit="event.preventDefault(); submitCategoryForm(this);">
+        <form id="categoryForm" method="POST" action="{{ route('admin.categories.store') }}" >
             @csrf
             <input type="hidden" name="_method" value="POST">
 
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     function submitCategoryForm(form) {
         const formData = new FormData(form);
         const action = form.action;
@@ -53,4 +53,4 @@
             alert('An error occurred.');
         });
     }
-</script>
+</script> --}}

@@ -37,9 +37,9 @@
                         <option value="">Use a saved address (optional)</option>
                         @foreach($addresses as $addr)
                             <option value="{{ $addr->id }}" 
-                                data-name="{{ auth()->user()->name }}"
-                                data-email="{{ auth()->user()->email }}"
-                                data-phone="{{ auth()->user()->phone }}"
+                                data-name="{{ $addr->full_name }}"
+                                data-email="{{  auth()->user()->email ?? '' }}"
+                                data-phone="{{ $addr->phone }}"
                                 data-line1="{{ $addr->address_line_1 }}"
                                 data-line2="{{ $addr->address_line_2 }}"
                                 data-city="{{ $addr->city }}"

@@ -66,7 +66,19 @@
     
     <div style="display: flex; align-items: center; gap: 12px;">
         <i class="{{ $icon }}" style="font-size: 20px; flex-shrink: 0;"></i>
-        <span style="font-size: 14px; font-weight: 400;">{{ $message }}</span>
+        <div style="font-size: 14px; font-weight: 400;">
+            @if($message)
+                <div>{{ $message }}</div>
+            @endif
+
+            @if($errors->any())
+                <ul style="margin: 5px 0 0 0; padding-left: 20px; list-style-type: disc;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
     </div>
     
     <button type="button" 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category ; 
+use Illuminate\Support\Str;
+
 
 class CategoryController extends Controller
 {
@@ -17,9 +19,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:categories,name',
             'slug' => 'nullable|string|unique:categories,slug',
         ]);
+
+
 
         Category::create([
             'name' => $validated['name'],
@@ -28,17 +32,21 @@ class CategoryController extends Controller
 
 
 
-        if ($request->expectsJson()) {
-            return response()->json(['success' => true, 'category' => $category]);
-        }
+        // if ($request->expectsJson()) {
+        //      return response()->json([
+        //         'success' => true, 
+        //         'message' => 'Category created successfully!',
+        //         'type'    => 'success'
+        //     ]);
+        // }
 
-        return redirect()->route('admin.categories.index')->with('success', 'Category created.');
+        return redirect()->route('admin.categories.index')->with('alert', ['type' => 'success', 'message' => 'Category created.']);
     }
 
     public function update(Request $request, Category $category)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
             'slug' => 'nullable|string|unique:categories,slug,' . $category->id,
         ]);
 
@@ -47,11 +55,11 @@ class CategoryController extends Controller
             'slug' => $validated['slug'] ?? Str::slug($validated['name']),
         ]);
 
-        if ($request->expectsJson()) {
-            return response()->json(['success' => true, 'category' => $category]);
-        }
+        // if ($request->expectsJson()) {
+        //     return response()->json(['success' => true, 'category' => $category]);
+        // }
 
-        return redirect()->route('admin.categories.index')->with('success', 'Category updated.');
+        return redirect()->route('admin.categories.index')->with("alert", ['type' => 'success', 'message' => 'Category updated.']);
     }
 
     public function destroy(Category $category)

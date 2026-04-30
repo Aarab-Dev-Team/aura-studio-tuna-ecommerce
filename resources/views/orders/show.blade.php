@@ -126,7 +126,7 @@
 
                 <div class="info-block">
                     <h3>Shipping Address</h3>
-                    {!! nl2br(e($order->shipping_address)) !!}
+                    {!! nl2br($order->shipping_address) !!}
                 </div>
 
                 <div class="info-block" style="margin-bottom: 0;">

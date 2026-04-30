@@ -48,7 +48,7 @@
             <div class="info-card">
                 <h2>Shipping Address</h2>
                 <div class="address-format">
-                    {!! nl2br(e($order->shipping_address)) !!}
+                    {!! nl2br($order->shipping_address) !!}
                 </div>
             </div>
         </div>

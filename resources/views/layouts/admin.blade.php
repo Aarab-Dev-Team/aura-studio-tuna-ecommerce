@@ -146,6 +146,10 @@
                 </div>
             @endif
 
+            @if($errors->any())
+                <x-alert type="error" message="Please fix the following errors:"  />
+            @endif
+
     
  
         </header>
