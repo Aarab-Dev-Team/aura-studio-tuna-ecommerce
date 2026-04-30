@@ -1138,7 +1138,7 @@
                     <a href="{{ route('profile.edit') }}"><i class="iconoir-user"></i></a>
                     <a href="{{ route('cart.index') }}" class="cart-icon-wrapper">
                         <i class="iconoir-shopping-bag"></i>
-
+                        
                         <span id="cart-badge-count"  class="cart-badge  {{$cartCount ==0 ? 'hide' :  ''}}">{{$cartCount ?? 0}}</span>
 
                     </a>
@@ -1150,7 +1150,12 @@
                     </form>
                 @else
                     <a href="{{ route('login') }}"><i class="iconoir-user"></i></a>
-                    <a href="{{ route('cart.index') }}"><i class="iconoir-shopping-bag"></i></a>
+                    <a href="{{ route('cart.index') }}" class="cart-icon-wrapper">
+                        <i class="iconoir-shopping-bag"></i>
+                        
+                        <span id="cart-badge-count"  class="cart-badge  {{$cartCount ==0 ? 'hide' :  ''}}">{{$cartCount ?? 0}}</span>
+
+                    </a>
                 @endauth
             </div>
         </div>

@@ -206,9 +206,25 @@
 <script>
     const CSRF = document.querySelector('meta[name="csrf-token"]')?.content ?? '{{ csrf_token() }}';
 
+    function updateCartBadge(count){
+
+        const badge = document.getElementById('cart-badge-count') ; 
+        if(!badge) return ; 
+
+        if(count > 0 ){
+
+            badge.textContent = count ; 
+            badge.classList.remove('hide') ; 
+        }else{
+            badge.classList.add('hide') ; 
+
+        }
+    }
+
     function fmt(num) {
         return '$' + Number(num).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
+
 
     function updateQty(input) {
         const ctrl   = input.closest('.qty-control');
@@ -245,11 +261,7 @@
             if (tot)  tot.textContent = fmt(data.subtotal);
             if (orig) orig.style.display = 'none';
 
-            // update nav badge if present
-            document.querySelectorAll('[data-cart-count]').forEach(el => {
-                el.textContent = data.cart_count;
-                el.dataset.cartCount = data.cart_count;
-            });
+
         })
         .catch(() => { /* silently fail – user can still reload */ })
         .finally(() => { input.disabled = false; });
@@ -303,10 +315,7 @@
             if (orig) orig.style.display = 'none';
 
             // update nav badge
-            document.querySelectorAll('[data-cart-count]').forEach(el => {
-                el.textContent = data.cart_count;
-                el.dataset.cartCount = data.cart_count;
-            });
+            updateCartBadge(data.cart_count); 
 
             // if cart is now empty, reload to show the empty state
             if (data.cart_count === 0) {
@@ -315,5 +324,7 @@
         })
         .catch(() => { btn.disabled = false; });
     }
+
+    
 </script>
 @endpush
