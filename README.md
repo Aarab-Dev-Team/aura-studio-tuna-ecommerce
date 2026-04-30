@@ -1,43 +1,43 @@
+
 # E-commerce Platform
 
-A professional, full-featured e-commerce solution built with **Laravel 13**, **Tailwind CSS 4**, and **Alpine.js**. This platform provides a seamless shopping experience for customers and a robust management system for administrators and employees.
+A professional, full-featured e-commerce solution built with **Laravel 13**, **Blade**, **Vanilla CSS**, and **Alpine.js**. This platform provides a seamless shopping experience for customers and a robust management system for administrators and employees.
 
 ## 🚀 Features
 
 ### 🛍️ Shopping Experience
-- **Catalog & Discovery**: Browse products with advanced filtering and categories. High-quality product images and detailed descriptions.
-- **Smart Cart**: Real-time cart updates, quantity management, and intelligent subtotal calculation.
-- **Secure Checkout**: Streamlined multi-step checkout process with integrated order and address management.
-- **User Dashboard**: Dedicated profile section where customers can track orders, manage wishlists, update addresses, and modify profile settings.
+- **Catalog & Discovery**: Browse products with advanced filtering by category, origin, and material. High-quality product images and detailed descriptions.
+- **Smart Cart**: Real-time cart updates, quantity management, and automatic subtotal calculation. Works for both guests and logged-in users.
+- **Secure Checkout**: Streamlined checkout process with address management and mock payment methods (Cash on Delivery, Credit Card, PayPal).
+- **User Dashboard**: Customers can track orders, manage wishlists, update addresses, and edit profile settings.
 
 ### 🔐 Multi-Role Access Control
-- **Admin (`admin`)**: Full control over the platform. Manages users, settings, product approvals, categories, coupons, and overarching business logic.
-- **Employee (`employee`)**: Manages products (creates/edits requiring admin approval) and views orders with restricted administrative access. Has a dedicated Approval Workflow.
-- **Customer (`customer`)**: Standard shopping, ordering, and account management capabilities.
+- **Admin (`admin`)**: Full control over the platform. Manages users, settings, product approvals, categories, and business logic.
+- **Employee (`employee`)**: Manages products (creates/edits/deletes – all require admin approval), views orders and updates their status. Has limited administrative access.
+- **Customer (`customer`)**: Standard shopping, ordering, and account management.
 
 ### 🛠️ Administrative & Management Power
-- **Product Approval Workflow**: Integrated system where employees submit product creations, updates, or deletions for Admin review, ensuring data integrity.
-- **Order Management**: Real-time status updates, order tracking, and lifecycle management (pending -> processing -> shipped -> delivered).
-- **Coupon & Discount System**: Create and manage customizable discount codes (fixed amount or percentage, with usage limits and expiration dates) to boost sales.
-- **Analytics Dashboard**: Comprehensive overview of platform performance, pending tasks, and sales metrics at a glance.
+- **Product Approval Workflow**: Employees submit product creations, updates, or deletions. Admins review and approve/reject these changes in a dedicated approval queue with side-by-side diff comparison.
+- **Order Management**: Real-time status updates (pending → processing → shipped → delivered). Both employees and admins can manage orders.
+- **Analytics Dashboard**: Admin-only dashboard with key metrics: total orders, pending/processing orders, active products, and total users.
 
 ## 🧱 Architecture & Tech Stack
 
-- **Backend Framework**: [Laravel 13](https://laravel.com) - Providing robust routing, ORM (Eloquent), and authentication (Breeze).
-- **Frontend Styling**: [Tailwind CSS 4](https://tailwindcss.com) - For a modern, responsive, and highly customizable UI.
-- **Frontend Interactivity**: [Alpine.js](https://alpinejs.dev) - Lightweight JavaScript framework for dynamic UI components without the overhead of larger frameworks.
-- **Asset Bundling**: [Vite](https://vitejs.dev) - Fast, modern build tool for serving and bundling assets.
-- **Database**: SQLite (default for development/testing), fully compatible with MySQL/PostgreSQL via Laravel's Eloquent ORM.
+- **Backend Framework**: [Laravel 13](https://laravel.com) – robust routing, Eloquent ORM, Blade templating, Breeze authentication.
+- **Frontend Styling**: Custom CSS with design tokens (CSS custom properties) for a consistent editorial look.
+- **Frontend Interactivity**: [Alpine.js](https://alpinejs.dev) & vanilla JavaScript for dynamic UI components.
+- **Icons**: [Iconoir](https://iconoir.com) – open-source icon library.
+- **Asset Bundling**: [Vite](https://vitejs.dev) for fast asset compilation.
+- **Database**: MySQL (production) / SQLite (testing). Eloquent ORM handles all database interactions.
 
 ## 📋 Prerequisites
 
-Before you begin, ensure you have the following installed on your system:
 - **PHP 8.3+**
-- **Composer** (PHP dependency manager)
-- **Node.js & NPM** (For frontend asset compilation)
+- **Composer**
+- **Node.js & npm**
 - **Git**
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation & Setup (Manual)
 
 1. **Clone the repository**:
    ```bash
@@ -45,54 +45,114 @@ Before you begin, ensure you have the following installed on your system:
    cd E-commerce
    ```
 
-2. **Run the automated setup**:
-   This project includes a handy helper script in `composer.json` to install dependencies, set up the `.env` file, generate the app key, run migrations, and build frontend assets all in one go:
+2. **Install PHP dependencies**:
    ```bash
-   composer run setup
+   composer install
    ```
-   *(Alternatively, run these manually: `composer install`, copy `.env.example` to `.env`, `php artisan key:generate`, `npm install`, `npm run build`, `php artisan migrate`).*
 
-3. **Database Seeding (Required for Demo)**:
-   To populate the store with categories, products, coupons, and test users (Admin & Employee):
+3. **Set up environment**:
    ```bash
-   php artisan db:seed --class=DatabaseSeeder
+   cp .env.example .env
+   php artisan key:generate
    ```
-   *Note: `DatabaseSeeder` automatically runs all necessary seeders including `CategorySeeder`, `ProductSeeder`, `AdminUserSeeder`, `EmployeeUserSeeder`, `CouponSeeder`, and `DemoDataSeeder`.*
+
+4. **Configure database** in `.env` (default is MySQL). Then run migrations and seed:
+   ```bash
+   php artisan migrate --seed
+   ```
+
+5. **Install frontend dependencies and build assets**:
+   ```bash
+   npm install
+   npm run build
+   ```
+
+6. **Start the development server**:
+   ```bash
+   php artisan serve
+   ```
+   The app will be available at `http://localhost:8000`.
+
+## 🐳 Docker Setup
+
+For a containerized environment, the project includes a `docker-compose.yml`. This automatically sets up PHP 8.4, MySQL 8.4, and Node.js for Vite.
+
+1. **Start the containers**:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. **Access the application**:
+   - App: `http://localhost:8000`
+   - Vite dev server (for hot reload): `http://localhost:5173`
+
+3. **Stop containers**:
+   ```bash
+   docker-compose down
+   ```
+
+The `app` service runs `composer install`, generates the app key, links storage, and seeds the database automatically on startup.
 
 ## 🔐 Default Test Credentials
 
-After running the seeders, you can use these accounts to test the different roles and the approval workflow:
+After seeding, use these accounts to test the roles and approval workflow:
 
 | Role | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
-| **Admin** | `abdu@gmail.com` | `abderrahmane` | Full system access, approves/rejects changes. |
+| **Admin** | `abdu@gmail.com` | `abderrahmane` | Full access, approves/rejects changes. |
 | **Employee** | `employee@gmail.com` | `employeeadmin` | Manages products (pending approval), views orders. |
-| **Customer** | *(Generated by Faker)* | `password` | Shopping and profile management. |
+| **Customer** | _(generated by seeder)_ | `password` | Shopping and profile management. |
 
 ## 🖥️ Development
 
-To start the development environment efficiently, run:
+For efficient development, start both the Laravel server and Vite dev server concurrently:
 ```bash
 composer run dev
 ```
-This single command concurrently launches:
-1. The Laravel Artisan serve process (`http://localhost:8000`).
-2. The Vite development server for hot-module replacement (HMR).
-3. The Laravel Queue listener (for background tasks).
+This runs `php artisan serve` and `npm run dev` together.
 
-The application will be available at [http://localhost:8000](http://localhost:8000).
+## 🖼️ Screenshots
+
+<details>
+<summary>Click to expand screenshots</summary>
+
+### Homepage
+![Homepage](public/screenshots/homepage.png)
+
+### Product Catalog
+![Catalog](public/screenshots/catalog.png)
+
+### Product Detail
+![Product Detail](public/screenshots/product-detail.png)
+
+### Cart
+![Cart](public/screenshots/cart.png)
+
+### Checkout
+![Checkout](public/screenshots/checkout.png)
+
+### Customer Dashboard
+![Dashboard](public/screenshots/customer-dashboard.png)
+
+### Admin Panel
+![Admin Dashboard](public/screenshots/admin-dashboard.png)
+
+### Approval Queue
+![Approval Queue](public/screenshots/approval-queue.png)
+
+</details>
 
 ## 📁 Key Directory Structure
 
-- `app/Http/Controllers/Admin/` - Controllers handling the admin panel logic (Dashboards, Product Approval, Categories, etc.).
-- `app/Http/Controllers/Shop/` - Controllers handling public-facing store logic (Catalog, Cart, Checkout).
-- `app/Models/` - Eloquent models defining database relationships (User, Product, Order, Cart, etc.).
-- `resources/views/` - Blade templates organized logically (`admin/`, `shop/`, `profile/`, etc.).
-- `database/seeders/` - Contains the robust seeding logic for demo data, products (with images), categories, and users.
+- `app/Http/Controllers/Admin/` – Admin panel controllers (Dashboard, Products, Orders, Approval, Categories, Users, Settings).
+- `app/Http/Controllers/Shop/` – Public-facing store controllers (Catalog, Cart, Checkout).
+- `app/Models/` – Eloquent models (User, Product, Order, Cart, Wishlist, etc.).
+- `resources/views/` – Blade templates (`admin/`, `shop/`, `profile/`, `layouts/`).
+- `database/seeders/` – Seeders for demo data, products (with real images), categories, and users.
 
 ## 🧪 Testing
 
-To run the automated PHPUnit test suite:
+Run the automated PHPUnit test suite:
 ```bash
 composer run test
 ```
