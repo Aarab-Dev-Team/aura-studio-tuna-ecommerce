@@ -14,12 +14,14 @@ services:
   
     command: >
       bash -c "
-      apt-get update && apt-get install -y libzip-dev zip unzip git &&
-      docker-php-ext-install pdo pdo_mysql zip &&
+      apt-get update && apt-get install -y libzip-dev zip unzip git libpng-dev libfreetype6-dev libjpeg62-turbo-dev &&
+      docker-php-ext-configure gd --with-freetype --with-jpeg &&
+      docker-php-ext-install pdo pdo_mysql zip gd &&
       curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
       composer install &&
       php artisan key:generate --ansi &&
-      php artisan migrate --force &&
+      php artisan storage:link &&
+      php artisan migrate:fresh --seed --force &&
       php artisan serve --host=0.0.0.0 --port=8000
       "
     ports:
@@ -29,7 +31,7 @@ services:
         condition: service_healthy
 
   mysql:
-    image: mysql:8.4 # Using 8.4 to stay modern with your PHP version
+    image: mysql:8.4
     container_name: laravel_mysql
     restart: always
     environment:

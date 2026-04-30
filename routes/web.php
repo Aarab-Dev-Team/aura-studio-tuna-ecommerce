@@ -87,6 +87,9 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::get('/my-orders/{order}', [OrderController::class, 'show'])->name('orders.show');
     Route::post('/my-orders', [OrderController::class, 'store'])->name('orders.store');
 
+    //invoice download 
+    Route::get("/my-orders/{order}/download" , [OrderController::class , "downloadInvoice"])->name('orders.invoice.download') ; 
+
     // Addresses (Profile tab)
     Route::prefix('profile/addresses')->name('profile.addresses.')->group(function () {
         Route::get('/', [AddressController::class, 'index'])->name('index');

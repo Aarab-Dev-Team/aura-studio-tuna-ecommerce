@@ -148,8 +148,7 @@
 
             {{-- Actions --}}
             <div>
-                <button class="btn btn-primary"><i class="iconoir-delivery-truck"></i> Track shipment</button>
-                <button class="btn btn-ghost"><i class="iconoir-download"></i> Download invoice</button>
+                <a class="btn btn-primary" href="{{ route('orders.invoice.download' , $order->order_number) }}"><i class="iconoir-download"></i> Download invoice</a>
                 <button class="btn-danger-link">Report an issue</button>
             </div>
 

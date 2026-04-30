@@ -65,7 +65,7 @@ class ProductSeeder extends Seeder
         ];
 
         // 4. Loop exactly 50 times to create 50 products
-        for ($i = 1; $i <= 50; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             // Pick random words to make a unique product
             $brand = $brands[array_rand($brands)];
             $type = $types[array_rand($types)];
