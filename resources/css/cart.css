@@ -43,6 +43,8 @@
 }
 
 /* Cart Items */
+
+
 .cart-items {
     display: flex;
     flex-direction: column;
@@ -64,15 +66,21 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
+
 .cart-empty{
+    
     display: flex ;
     flex-direction:  column;
     align-items: center;
-    width: 90vw;
+    width: 100%;
     background-color: white;
     border-radius: 4px;
     border: 1px solid var(--border-color);
     padding: 100px 0;
+}
+
+.cart-layout:has(.cart-empty) .cart-items-section {
+    grid-column: 1 / -1;
 }
 
 .item-image {
