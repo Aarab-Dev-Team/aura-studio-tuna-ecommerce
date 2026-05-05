@@ -119,16 +119,7 @@
                     </div>
                 </div>
 
-                 <div class="team-card">
-                    <img src="" alt="Hajar" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 24px; border: 1px solid var(--border-color);">
-                     <h4>Hajar</h4>
-                    <span class="role">Presentation & Communication</span>
-                    <p>Prepared and delivered the project presentation, ensuring clear communication of concepts, features, and system design.</p>
-                    <div class="team-socials">
-                        <a href="#"><i class="iconoir-github"></i></a>
-                        <a href="#"><i class="iconoir-linkedin"></i></a>
-                    </div>
-                </div>
+
 
    
             </div>
