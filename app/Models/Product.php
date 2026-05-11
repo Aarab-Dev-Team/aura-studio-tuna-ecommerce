@@ -3,23 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory; 
-
-
-use App\Models\CartItem ; 
-use App\Models\Category ; 
-use App\Models\Review ; 
-use App\Models\Wishlist ; 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use App\Models\CartItem; 
+use App\Models\Category; 
+use App\Models\Review; 
+use App\Models\Wishlist; 
 
 class Product extends Model
 {
-    
     use HasFactory;
-    use SoftDeletes ;
+    use SoftDeletes;
 
-      protected $fillable = [
+    protected $fillable = [
         'name',
         'slug',
         'description',
@@ -47,11 +46,22 @@ class Product extends Model
         'original_data' => 'array',
     ];
 
-    public function category() { return $this->belongsTo(Category::class); }
-    public function reviews() { return $this->hasMany(Review::class); }
-    public function cartItems() { return $this->hasMany(CartItem::class); }
+    public function category(): BelongsTo 
+    { 
+        return $this->belongsTo(Category::class); 
+    }
+    
+    public function reviews(): HasMany 
+    { 
+        return $this->hasMany(Review::class); 
+    }
+    
+    public function cartItems(): HasMany 
+    { 
+        return $this->hasMany(CartItem::class); 
+    }
 
-    public function wishlistedBy()
+    public function wishlistedBy(): HasMany
     {
         return $this->hasMany(Wishlist::class);
     }
@@ -62,6 +72,4 @@ class Product extends Model
         if (!$user) return false;
         return $this->wishlistedBy()->where('user_id', $user->id)->exists();
     }
-
-  
 }
