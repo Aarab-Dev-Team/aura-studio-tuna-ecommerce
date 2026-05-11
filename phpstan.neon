@@ -1,0 +1,14 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 5 is a great baseline for catching security flaws and bugs.
+    level: 5
+
+    excludePaths:
+        # Add any paths here that you want the scanner to ignore later
+        # - ./*/*/FileToBeExcluded.php
